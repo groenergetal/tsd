@@ -1,0 +1,20 @@
+/YOUR TURN: add your Mapbox token
+mapboxgl.accessToken =
+  'pk.eyJ1IjoiZ3JlZW5kaWdpdCIsImEiOiJjbGJxZjA4dnMwaGV6M29sZTIyYjFndmNzIn0.8iECTSycrIZy5Ivyk1Hifw';
+  
+var map = new mapboxgl.Map({
+  container: 'map', // container id
+  style: 'mapbox://styles/mapbox/streets-v11', // YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
+  center: [-122.411, 37.785], // starting position [lng, lat]
+  zoom: 10, // starting zoom
+  transformRequest: transformRequest
+});
+
+ $(document).ready(function () {
+      $.ajax({
+        type: "GET",
+        //YOUR TURN: Replace with csv export link
+        url: 'https://docs.google.com/spreadsheets/d/15VgKhr-oyxpAzeWeJKp_i8PqOuGOX2qxkPlIdN8o6AM/edit?usp=sharing',
+        dataType: "text",
+        success: function (csvData) { makeGeoJSON(csvData); }
+      });
