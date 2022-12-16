@@ -17,3 +17,16 @@ var map = new mapboxgl.Map({
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
+
+map.addLayer({
+  id: 'werkbonnen',
+  type: 'circle',
+  source: {
+    type: 'geojson',
+    data: data
+  },
+  paint: {
+    'circle-radius': 5,
+    'circle-color': 'purple'
+  }
+});
