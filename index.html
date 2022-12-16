@@ -124,34 +124,15 @@
             map.addLayer({
               'id': 'csvData',
               'type': 'circle',
-              'source': 'Phone',
-              'source-layer': 'sf2010',
+              'source': {
+                'type': 'geojson',
+                'data': data
+              },
               'paint': {
-              // Make circles larger as the user zooms from z12 to z22.
-              'circle-radius': {
-              'base': 1.75,
-              'stops': [
-                [12, 2],
-                [22, 180]
-              ]
-                },
-                // Color circles by ethnicity, using a `match` expression.
-                'circle-color': [
-                  'match',                
-                  ['get', 'Phone'],                  
-                  '1',
-                  '#fbb03b',
-                  '2',
-                  '#223b53',
-                  '3',
-                  '#e55e5e',
-                  '4',
-                  '#3bb2d0',
-                  /* other */ '#ccc'
-                  ]
+                'circle-radius': 5,
+                'circle-color': "purple"
               }
             });
-
 
             // When a click event occurs on a feature in the csvData layer, open a popup at the
             // location of the feature, with description HTML from its properties.
