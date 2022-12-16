@@ -130,7 +130,19 @@
               },
               'paint': {
                 'circle-radius': 5,
-                'circle-color': "purple"
+                'circle-color': [
+                  'match',
+                  ['get', 'Phone'],                  
+                  '1',
+                  '#fbb03b',
+                  '2',
+                  '#223b53',
+                  '3',
+                  '#e55e5e',
+                  '4',
+                  '#3bb2d0',
+                  /* other */ '#ccc'
+                  ]
               }
             });
 
