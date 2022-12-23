@@ -105,7 +105,7 @@
       $.ajax({
         type: "GET",
         //YOUR TURN: Replace with csv export link
-        url: 'https://docs.google.com/spreadsheets/d/15VgKhr-oyxpAzeWeJKp_i8PqOuGOX2qxkPlIdN8o6AM/gviz/tq?tqx=out:csv&sheet=maps',
+        url: 'https://docs.google.com/spreadsheets/d/15VgKhr-oyxpAzeWeJKp_i8PqOuGOX2qxkPlIdN8o6AM/gviz/tq?tqx=out:csv&sheet=werkbonnen',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
@@ -143,7 +143,7 @@
               //set popup text
               //You can adjust the values of the popup to match the headers of your CSV.
               // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
-              var description = `<h3>` + e.features[0].properties.Name + `</h3>` + `<h4>` + `<b>` + `Address: ` + `</b>` + e.features[0].properties.Address + `</h4>` + `<h4>` + `<b>` + `Phone: ` + `</b>` + e.features[0].properties.Phone + `</h4>`;
+              var description = `<h3>` + e.features[0].properties.Naam + `</h3>` + `<h4>` + `<b>` + `Address: ` + `</b>` + e.features[0].properties.Straat + `</h4>` + `<h4>` + `<b>` + `</h4>`;
 
               // Ensure that if the map is zoomed out such that multiple
               // copies of the feature are visible, the popup appears
