@@ -130,8 +130,30 @@
                 'data': data
               },
               'paint': {
-                'circle-radius': 5,
-                'circle-color': "purple"
+                // Make circles larger as the user zooms from z12 to z22.
+                'circle-radius':  {
+                  'base': 1.75,
+                  'stops': [
+                    [12, 2],
+                    [22, 180]
+                    ]
+                  },
+                // Color circles by ethnicity, using a `match` expression.
+                'circle-color':  [
+                  'match',
+                  ['get', 'ethnicity'],
+                  '1',
+                  '#fbb03b',
+                  '2',
+                  '#223b53',
+                  '3',
+                  '#e55e5e',
+                  '4',
+                  '#3bb2d0',
+                  /* other */ '#ccc'
+                  ]
+                  }
+       
               }
             });
         
