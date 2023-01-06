@@ -130,7 +130,11 @@
                 'data': data
               },
               'paint': {
-                'circle-radius': 4,
+                'circle-radius': 'base': 4,
+                'stops': [
+                [12, 4],
+                [22, 180]
+                ],
                 // Color circles by ethnicity, using a `match` expression.
                 'circle-color':  [
                   'match',
