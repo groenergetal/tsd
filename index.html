@@ -106,7 +106,7 @@
       $.ajax({
         type: "GET",
         //YOUR TURN: Replace with csv export link
-        url: 'https://docs.google.com/spreadsheets/d/15VgKhr-oyxpAzeWeJKp_i8PqOuGOX2qxkPlIdN8o6AM/gviz/tq?tqx=out:csv&sheet=werkbonnen',
+        url: 'https://docs.google.com/spreadsheets/d/15VgKhr-oyxpAzeWeJKp_i8PqOuGOX2qxkPlIdN8o6AM/gviz/tq?tqx=out:csv&sheet=maps',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
@@ -146,7 +146,8 @@
 
              var description = `<h3>` + e.features[0].properties.Naam + `</h3>` + `<h4>` + `<b>` + 
                  `Straat: ` + `</b>` + e.features[0].properties.Straat + `</h4>` + `<h4>` + `<b>` + 
-                 `Plaats: ` + `</b>` + e.features[0].properties.Plaats + `</h4>`;
+                 `Plaats: ` + `</b>` + e.features[0].properties.Plaats + `</h4>` +`<h4>` + `<b>` + 
+                 `dagen: ` + `</b>` + e.features[0].properties.Plaats + `</h4>`;
 
               // Ensure that if the map is zoomed out such that multiple
               // copies of the feature are visible, the popup appears
